@@ -1,6 +1,6 @@
 {
   "name": "set-cookie",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Set a cookie using the same API on both the client and the server.",
   "main": "index.js",
   "scripts": {
