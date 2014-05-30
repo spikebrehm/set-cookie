@@ -1,0 +1,16 @@
+{
+  "name": "set-cookie",
+  "version": "0.0.0",
+  "description": "Set a cookie using the same API on both the client and the server.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cookie",
+    "set-cookie",
+    "isomorphic"
+  ],
+  "author": "Spike Brehm <ocelot@gmail.com>",
+  "license": "MIT"
+}
