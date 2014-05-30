@@ -14,6 +14,10 @@
     "set-cookie",
     "isomorphic"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/spikebrehm/set-cookie.git"
+  },
   "author": "Spike Brehm <ocelot@gmail.com>",
   "license": "MIT",
   "dependencies": {
