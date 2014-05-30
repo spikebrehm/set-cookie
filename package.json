@@ -4,7 +4,7 @@
   "description": "Set a cookie using the same API on both the client and the server.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [
     "cookie",
@@ -12,5 +12,18 @@
     "isomorphic"
   ],
   "author": "Spike Brehm <ocelot@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "cookie": "^0.1.2",
+    "sinon": "^1.10.0"
+  },
+  "browser": {
+    "./lib/setter/index.js": "./lib/setter/client.js"
+  },
+  "devDependencies": {
+    "mocha": "^1.20.0",
+    "chai": "^1.9.1",
+    "http": "0.0.0",
+    "superagent": "^0.18.0"
+  }
 }
