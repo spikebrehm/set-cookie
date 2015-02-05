@@ -1,0 +1,17 @@
+{
+  "name": "set-cookie-express-example",
+  "version": "0.0.0",
+  "description": "Example showing set-cookie with Express.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.11.2",
+    "morgan": "^1.5.1"
+  }
+}
