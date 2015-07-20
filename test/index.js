@@ -1,4 +1,5 @@
-var setCookie = require('../');
+var getCookie = require('../').getCookie;
+var setCookie = require('../').setCookie;
 var chai = require('chai');
 var sinon = require('sinon');
 var superagent = require('superagent');
@@ -66,6 +67,48 @@ describe('set-cookie', function() {
           expect(res.headers['set-cookie'][0]).to.equal(expectedStr);
           done();
         });
+    });
+  });
+});
+
+describe('get-cookie', function() {
+  describe('Node getter', function() {
+    it('throws when not passed `req`', function() {
+      expect(function() {
+        getCookie('myName', {});
+      }).to.throw(/req/);
+    });
+
+    it('returns undefined when passed `req` without a Cookie header', function() {
+      var req = {
+        headers: {}
+      };
+
+      var cookie = getCookie('myName', {req: req});
+      expect(cookie).to.eql(undefined);
+    });
+
+    describe('when passed a Cookie header', function() {
+      var req = {
+        headers: {
+          cookie: 'foo=bar%20baz; cat=meow; dog=ruff'
+        }
+      };
+
+      it('returns undefined if the key is not present', function() {
+        var cookie = getCookie('myName', {req: req});
+        expect(cookie).to.eql(undefined);
+      });
+
+      it('returns the value if the key is present', function() {
+        var cookie = getCookie('cat', {req: req});
+        expect(cookie).to.eql('meow');
+      });
+
+      it('decodes the parsed value', function() {
+        var cookie = getCookie('foo', {req: req});
+        expect(cookie).to.eql('bar baz');
+      });
     });
   });
 });
