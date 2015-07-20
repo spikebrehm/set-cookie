@@ -1,7 +1,7 @@
 {
   "name": "set-cookie",
-  "version": "0.0.4",
-  "description": "Set a cookie using the same API on both the client and the server.",
+  "version": "0.1.0",
+  "description": "Get and set cookies using the same API on both the client and the server.",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
@@ -24,6 +24,7 @@
     "cookie": "^0.1.2"
   },
   "browser": {
+    "./lib/getter/index.js": "./lib/getter/client.js",
     "./lib/setter/index.js": "./lib/setter/client.js"
   },
   "devDependencies": {
